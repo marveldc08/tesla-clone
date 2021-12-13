@@ -6,10 +6,13 @@ import Section from './Section'
 
 function Home() {
     return (
-        <Container>
-            <Section />
-        </Container>
-    )
+      <Container>
+        <Section />
+        <Section />
+        <Section />
+        <Section />
+      </Container>
+    );
 }
 
 export default Home
