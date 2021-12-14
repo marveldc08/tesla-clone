@@ -1,22 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Section() {
-    return (
-      <Wrap>
-        <ItemText>
-          <h1>Model S</h1>
-          <p>Order Online for Touchless Delivery</p>
-        </ItemText>
-        <Buttons>
-          <ButtonGroup>
-            <LeftButton>Custom Order</LeftButton>
-            <RightButton>Existing Inventory</RightButton>
-          </ButtonGroup>
-          <DownArrow src="/images/down-arrow.svg" />
-        </Buttons>
-      </Wrap>
-    );
+function Section({
+  title,
+  description,
+  leftBtnText,
+  rightBtnText,
+  backgroundImage,
+}) {
+  return (
+    <Wrap bgImage={backgroundImage}>
+      <ItemText>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </ItemText>
+      <Buttons>
+        <ButtonGroup>
+          <LeftButton>{leftBtnText}</LeftButton>
+          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+        </ButtonGroup>
+        <DownArrow src="/images/down-arrow.svg" />
+      </Buttons>
+    </Wrap>
+  );
 }
 
 export default Section
@@ -27,12 +33,13 @@ const Wrap = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/model-s.jpg');
+    background-image: ${(props) => `url("/images/${props.bgImage}")`};
     display: flex;
     flex-direction: column;
     justify-content: space-between; //for vertical alignment
     align-items: center; // for horizontal alignment
-`
+   
+`;
 const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
@@ -40,6 +47,9 @@ const ItemText = styled.div`
 const ButtonGroup = styled.div`
     display: flex;
     margin-bottom: 30px;
+    @media (max-width: 768px){
+        flex-direction: column; //aligns vertically
+    }
 `
 const LeftButton = styled.div`
     background-color: rgba(23, 26, 32, 0.8);
