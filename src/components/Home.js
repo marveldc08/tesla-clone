@@ -6,7 +6,7 @@ import Section from './Section'
 
 function Home() {
     return (
-      <Container >
+      <Container>
         <Section
           title="Model S"
           description="Order Online for Touchless Delivery"
@@ -43,12 +43,18 @@ function Home() {
           rightBtnText="Learn More"
         />
         <Section
+          title="Solar Roof"
+          description="Produce Clean Energy From Your Roof"
+          backgroundImage="solar-roof.jpg"
+          leftBtnText="Order Now"
+          rightBtnText="Learn More"
+        />
+        <Section
           title="Accessories"
           description=""
           backgroundImage="accessories.jpg"
           leftBtnText="Shop Now"
         />
-        
       </Container>
     );
 }
