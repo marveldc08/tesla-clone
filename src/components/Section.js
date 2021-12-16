@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 //use react-awesome-reveal instead of react-reveal
+//while using the impored animation, add direction prop.
 import { Fade } from "react-awesome-reveal";
 
 function Section({
@@ -35,17 +36,16 @@ function Section({
 export default Section
 
 const Wrap = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: ${(props) => `url("/images/${props.bgImage}")`};
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; //for vertical alignment
-    align-items: center; // for horizontal alignment
-   
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: ${(props) => `url("/images/${props.bgImage}")`};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; //for  horizontal  alignment
+  align-items: center; // for vertical alignment
 `;
 const ItemText = styled.div`
     padding-top: 15vh;
