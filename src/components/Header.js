@@ -14,7 +14,7 @@ function Header() {
   
     return (
       <Container>
-        <a>
+        <a href="#">
           <img src="/images/logo.svg" alt="" />
         </a>
 
@@ -22,7 +22,7 @@ function Header() {
           {cars &&
             cars.map((car, index) => (
               //use key to identify each child.
-              <a key={index} href="#">
+              <a href="#" key={index}>
                 {car}
               </a>
             ))}
